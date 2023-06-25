@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Protopie-Inspector",
+  "version": "0.0.1",
+  "action": {
+    "default_popup": "src/pages/popup/index.html",
+    "default_icon": "pie.png"
+  },
+  "permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
+  "icons": {
+    "128": "pie.png"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": ["https://cloud.protopie.io/*"],
+      "js": ["src/pages/content/index.js"]
+    }
+  ]
+}
